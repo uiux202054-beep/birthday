@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#060816;
+    overflow:hidden;
+    color:#fff;
+}
+
+/* ==========================
+   Animated Background
+========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,0,180,.25),transparent 35%),
+    radial-gradient(circle at 80% 10%,rgba(0,200,255,.18),transparent 35%),
+    radial-gradient(circle at 50% 100%,rgba(140,0,255,.25),transparent 40%),
+    #050714;
+    animation:bgMove 15s infinite alternate ease-in-out;
+}
+
+@keyframes bgMove{
+
+from{
+transform:scale(1) rotate(0deg);
+}
+
+to{
+transform:scale(1.1) rotate(2deg);
+}
+
+}
+
+/* ==========================
+   Stars
+========================== */
+
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-4;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+
+50%{
+opacity:.2;
+transform:scale(2);
+}
+
+}
+
+/* ==========================
+Hero
+========================== */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+}
+
+.subtitle{
+
+font-size:24px;
+
+font-weight:300;
+
+margin-bottom:15px;
+
+}
+
+.hero h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:90px;
+
+color:#ff84dd;
+
+text-shadow:
+
+0 0 20px #ff4fc4,
+
+0 0 60px rgba(255,0,170,.45);
+
+}
+
+.description{
+
+margin-top:20px;
+
+font-size:24px;
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+
+/* ==========================
+Gift
+========================== */
+
+.gift-box{
+
+position:relative;
+
+width:230px;
+
+height:190px;
+
+margin:70px auto;
+
+cursor:pointer;
+
+animation:giftFloat 4s infinite ease-in-out;
+
+perspective:900px;
+
+transition:.8s;
+
+}
+
+@keyframes giftFloat{
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/* Shadow */
+
+.shadow{
+
+position:absolute;
+
+bottom:-20px;
+
+left:50%;
+
+width:170px;
+
+height:25px;
+
+transform:translateX(-50%);
+
+background:rgba(255,0,180,.35);
+
+filter:blur(20px);
+
+border-radius:50%;
+
+}
+
+/* Body */
+
+.gift-body{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:135px;
+
+border-radius:0 0 18px 18px;
+
+background:linear-gradient(#f7b9c0,#df8d95);
+
+border:2px solid #ca7980;
+
+overflow:hidden;
+
+}
+
+/* Lid */
+
+.gift-lid{
+
+position:absolute;
+
+top:0;
+
+width:100%;
+
+height:58px;
+
+background:linear-gradient(#ffd6da,#efb0b7);
+
+border-radius:15px 15px 8px 8px;
+
+border:2px solid #ca7980;
+
+transform-origin:bottom center;
+
+transition:1s;
+
+z-index:10;
+
+}
+
+/* Open */
+
+.gift-box.open .gift-lid{
+
+transform:
+
+rotateX(-150deg)
+
+translateY(-10px);
+
+}
+
+.gift-box.open{
+
+transform:scale(1.08);
+
+}
+
+/* Ribbons */
+
+.ribbon-v{
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:18px;
+
+height:100%;
+
+background:white;
+
+}
+
+.ribbon-h{
+
+position:absolute;
+
+top:22px;
+
+width:100%;
+
+height:16px;
+
+background:white;
+
+}
+
+/* Bow */
+
+.bow{
+
+position:absolute;
+
+left:50%;
+
+top:-12px;
+
+transform:translateX(-50%);
+
+}
+
+.loop{
+
+position:absolute;
+
+width:40px;
+
+height:24px;
+
+background:#ffd8dc;
+
+border-radius:50%;
+
+border:2px solid #ca7980;
+
+}
+
+.loop.left{
+
+left:-38px;
+
+transform:rotate(-20deg);
+
+}
+
+.loop.right{
+
+left:0;
+
+transform:rotate(20deg);
+
+}
+
+.knot{
+
+position:absolute;
+
+left:-4px;
+
+top:6px;
+
+width:14px;
+
+height:14px;
+
+background:#ffd8dc;
+
+border-radius:50%;
+
+border:2px solid #ca7980;
+
+}
+
+.tail{
+
+position:absolute;
+
+width:18px;
+
+height:28px;
+
+background:#ffd8dc;
+
+top:12px;
+
+border:2px solid #ca7980;
+
+}
+
+.tail.left{
+
+left:-16px;
+
+transform:rotate(30deg);
+
+}
+
+.tail.right{
+
+left:8px;
+
+transform:rotate(-30deg);
+
+}
+
+/* ==========================
+Golden Light
+========================== */
+
+.gift-light{
+
+position:absolute;
+
+left:50%;
+
+top:35px;
+
+transform:translateX(-50%);
+
+width:50px;
+
+height:50px;
+
+background:#ffd84d;
+
+border-radius:50%;
+
+filter:blur(25px);
+
+opacity:0;
+
+transition:1s;
+
+}
+
+.gift-box.open .gift-light{
+
+opacity:1;
+
+transform:
+
+translateX(-50%)
+
+scale(7);
+
+}
+
+/* Hint */
+
+.hint{
+
+margin-top:20px;
+
+font-size:18px;
+
+opacity:.9;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+opacity:.4;
+
+}
+
+}
+
+/* ==========================
+Flash
+========================== */
+
+.flash{
+
+position:fixed;
+
+inset:0;
+
+background: transparent;
+
+opacity:0;
+
+pointer-events:none;
+
+z-index:999;
+
+}
+
+.flash.show{
+
+animation:flash .7s;
+
+}
+
+@keyframes flash{
+
+0%{
+opacity:0;
+}
+
+40%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+}
+
+}
+
+/* ==========================
+Transition
+========================== */
+v
+/* ==========================
+Confetti
+========================== */
+.firework{
+
+position:fixed;
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+z-index:99998;
+
+box-shadow:0 0 15px currentColor;
+filter:blur(.5px);
+
+}
+.paper{
+
+position:fixed;
+
+width:10px;
+
+height:18px;
+
+border-radius:2px;
+
+pointer-events:none;
+
+z-index:99999;
+
+}
+
+/* ==========================
+Hearts
+========================== */
+
+.heart{
+
+position:fixed;
+
+bottom:-50px;
+
+font-size:25px;
+
+opacity:.2;
+
+pointer-events:none;
+
+animation:heartFloat linear forwards;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(0) scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.2;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+/* Balloons */
+.balloon{
+    position:fixed;
+    width:55px;
+    height:75px;
+    z-index:99999;
+    pointer-events:none;
+    transform-origin:center bottom;
+}
+
+.balloon svg{
+    width:100%;
+    height:100%;
+    display:block;
+    filter:drop-shadow(0 8px 15px rgba(0,0,0,.25));
+}
+
+.balloon-string{
+    position:absolute;
+    left:50%;
+    top:68px;
+    width:2px;
+    height:90px;
+    background:linear-gradient(#fff,#d9d9d9);
+    transform:translateX(-50%);
+}
+.sparkle{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    background:#ffd84d;
+
+    border-radius:50%;
+
+    box-shadow:0 0 15px #ffd84d;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+} 
+/* ==========================
+Golden Rays
+========================== */
+
+.ray{
+   position:fixed;
+
+width:6px;
+
+height:180px;
+
+background:linear-gradient(
+to top,
+rgba(255,215,0,0),
+#ffd700,
+rgba(255,215,0,0)
+);
+
+transform-origin:bottom center;
+
+pointer-events:none;
+
+z-index:99995;
+
+filter:blur(1px);
+}
+
+/* Camera Shake */
+
+body.shake{
+    animation:cameraShake .45s;
+}
+
+@keyframes cameraShake{
+
+0%,100%{transform:translate(0,0);}
+20%{transform:translate(-4px,2px);}
+40%{transform:translate(5px,-3px);}
+60%{transform:translate(-3px,4px);}
+80%{transform:translate(4px,-2px);}
+
+}
+.shake{
+    animation:cameraShake .5s;
+}
+
+@keyframes cameraShake{
+
+0%,100%{
+    transform:translate(0,0);
+}
+
+20%{
+    transform:translate(-6px,3px);
+}
+
+40%{
+    transform:translate(6px,-3px);
+}
+
+60%{
+    transform:translate(-5px,-4px);
+}
+
+80%{
+    transform:translate(5px,4px);
+}
+
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Floating Hearts -->
+    <div id="hearts"></div>
+
+    <!-- Flash -->
+    <div class="flash" id="flash"></div>
+
+    <!-- Blur -->
+    <div class="blur-screen" id="blur"></div>
+
+    <!-- Transition -->
+    <div class="page-transition" id="transition"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="subtitle">
+                Just For You ❤️
+            </p>
+
+            <h1>
+                Your Birthday Surprise
+            </h1>
+
+            <p class="description">
+                Every gift tells a story...
+                <br>
+                This one hides a message from my heart.
+            </p>
+
+            <!-- Gift -->
+            <div class="gift-box" id="gift">
+
+                <div class="gift-lid">
+
+                    <div class="ribbon-v"></div>
+                    <div class="ribbon-h"></div>
+
+                    <div class="bow">
+                        <span class="loop left"></span>
+                        <span class="loop right"></span>
+                        <span class="knot"></span>
+                        <span class="tail left"></span>
+                        <span class="tail right"></span>
+                    </div>
+
+                </div>
+
+                <div class="gift-body">
+                    <div class="ribbon-v"></div>
+                </div>
+
+                <!-- Golden Light -->
+                <div class="gift-light"></div>
+
+                <div class="shadow"></div>
+
+            </div>
+
+            <p class="hint">
+                ✨ Click the Gift to Open Your Surprise ✨
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Floating Balloons -->
+    <div id="balloons"></div>
+
+    <!-- Sparkles -->
+    <div id="sparkles"></div>
+
+    <!-- Confetti -->
+    <div id="confetti"></div>
+
+    <!-- JS -->
+    <script>
+        // ===============================
+// Create Stars
+// ===============================
+
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 180; i++) {
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.top = Math.random() * 100 + "vh";
+
+    const size = Math.random() * 3 + 1;
+
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.animationDelay = Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+
+}
+
+// ===============================
+// Floating Hearts
+// ===============================
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = (18 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (6 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 10000);
+
+}
+
+setInterval(createHeart, 400);
+
+// ===============================
+// Gift Click
+// ===============================
+
+const gift = document.getElementById("gift");
+
+let opened = false;
+
+gift.addEventListener("click", () => {
+
+    if (opened) return;
+
+    opened = true;
+
+    // Gift Open
+    gift.classList.add("open");
+
+    // Camera Shake
+    document.body.classList.add("shake");
+
+    // Effects
+    createGoldenRays();
+    createConfetti();
+    createSparkles();
+    createBalloons();
+    createFireworks();
+
+    // Shake Remove
+    setTimeout(() => {
+        document.body.classList.remove("shake");
+    }, 500);
+
+   // Flash
+setTimeout(() => {
+    document.getElementById("flash").classList.add("show");
+}, 350);
+
+// Glass Blur Transition
+setTimeout(() => {
+    document.getElementById("transition").classList.add("active");
+}, 1000);
+
+// Redirect
+setTimeout(() => {
+    window.location.href = "gallery.html";
+}, 1500);
+});
+// ===============================
+// Confetti
+// ===============================
+
+function createConfetti() {
+
+    const rect = gift.getBoundingClientRect();
+
+    const colors = [
+        "#ff4fa3",
+        "#ffd93d",
+        "#00e5ff",
+        "#ffffff",
+        "#7dff7d",
+        "#9d4edd",
+        "#ff8fab"
+    ];
+
+    for (let i = 0; i < 220; i++) {
+
+        const paper = document.createElement("div");
+
+        paper.className = "paper";
+
+        paper.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        paper.style.left =
+            rect.left + rect.width / 2 + "px";
+
+        paper.style.top =
+            rect.top + rect.height / 2 + "px";
+
+        document.body.appendChild(paper);
+
+        const angle = Math.random() * Math.PI * 2;
+
+        const distance = 250 + Math.random() * 500;
+
+        const x = Math.cos(angle) * distance;
+
+        const y = Math.sin(angle) * distance;
+
+        paper.animate([
+            {
+                transform: "translate(-50%,-50%) rotate(0deg)",
+                opacity: 1
+            },
+            {
+                transform:
+                    `translate(${x}px,${y}px) rotate(${720 + Math.random() * 720}deg)`,
+                opacity: 0
+            }
+        ], {
+            duration: 2200,
+            easing: "ease-out",
+            fill: "forwards"
+        });
+
+        setTimeout(() => {
+
+            paper.remove();
+
+        }, 2200);
+
+    }
+
+}
+
+ // ===============================
+// Flying Balloons
+// ===============================
+
+function createBalloons(){
+
+    const rect = gift.getBoundingClientRect();
+
+    const colors=[
+        "#ff4d6d",
+        "#ffbe0b",
+        "#3a86ff",
+        "#06d6a0",
+        "#8338ec",
+        "#ff66c4",
+        "#ffffff"
+    ];
+
+    for(let i=0;i<15;i++){
+
+        const balloon=document.createElement("div");
+        balloon.className="balloon";
+
+        const color=colors[Math.floor(Math.random()*colors.length)];
+
+        balloon.innerHTML=`
+        <svg viewBox="0 0 100 140">
+            <defs>
+                <radialGradient id="g${i}">
+                    <stop offset="0%" stop-color="#ffffff88"/>
+                    <stop offset="35%" stop-color="${color}"/>
+                    <stop offset="100%" stop-color="${color}"/>
+                </radialGradient>
+            </defs>
+
+            <ellipse
+                cx="50"
+                cy="48"
+                rx="34"
+                ry="42"
+                fill="url(#g${i})"/>
+
+            <ellipse
+                cx="38"
+                cy="28"
+                rx="8"
+                ry="14"
+                fill="rgba(255,255,255,.45)"/>
+
+            <polygon
+                points="46,88 54,88 50,100"
+                fill="${color}"/>
+        </svg>
+
+        <div class="balloon-string"></div>
+        `;
+
+        balloon.style.left =
+            (rect.left + rect.width/2 + (Math.random()*30-15))+"px";
+
+        balloon.style.top =
+            (rect.top+25)+"px";
+
+        document.body.appendChild(balloon);
+
+        const drift=(Math.random()-0.5)*300;
+        const rotate=(Math.random()-0.5)*40;
+
+        balloon.animate([
+            {
+                transform:"translate(0,0) scale(.2)",
+                opacity:0
+            },
+            {
+                transform:`translate(${drift}px,-60vh) rotate(${rotate}deg) scale(.9)`,
+                opacity:1,
+                offset:.3
+            },
+            {
+                transform:`translate(${drift+30}px,-140vh) rotate(${rotate*2}deg) scale(1)`,
+                opacity:1
+            }
+        ],{
+            duration:6000+Math.random()*2000,
+            easing:"ease-out",
+            fill:"forwards"
+        });
+
+        setTimeout(()=>{
+            balloon.remove();
+        },8500);
+    }
+}
+
+function createSparkles(){
+
+    const rect = gift.getBoundingClientRect();
+
+    for(let i=0;i<80;i++){
+
+        const s=document.createElement("div");
+
+        s.className="sparkle";
+
+        s.style.left=(rect.left+rect.width/2)+"px";
+        s.style.top=(rect.top+30)+"px";
+
+        document.body.appendChild(s);
+
+        const angle=Math.random()*Math.PI*2;
+        const distance=80+Math.random()*180;
+
+        const x=Math.cos(angle)*distance;
+        const y=Math.sin(angle)*distance;
+
+        s.animate([
+            {
+                transform:"translate(-50%,-50%) scale(0)",
+                opacity:1
+            },
+            {
+                transform:`translate(${x}px,${y}px) scale(2)`,
+                opacity:0
+            }
+        ],{
+            duration:1200,
+            easing:"ease-out",
+            fill:"forwards"
+        });
+
+        setTimeout(()=>s.remove(),1200);
+
+    }
+
+}
+
+function createGoldenRays(){
+
+    const rect = gift.getBoundingClientRect();
+
+    for(let i=0;i<18;i++){
+
+        const ray=document.createElement("div");
+        ray.className="ray";
+
+        ray.style.left=(rect.left+rect.width/2)+"px";
+        ray.style.top=(rect.top+40)+"px";
+
+        document.body.appendChild(ray);
+
+        const angle=i*20;
+
+        ray.animate([
+            {
+                transform:`translate(-50%,-100%) rotate(${angle}deg) scaleY(.2)`,
+                opacity:0
+            },
+            {
+                transform:`translate(-50%,-100%) rotate(${angle}deg) scaleY(1.3)`,
+                opacity:1
+            },
+            {
+                transform:`translate(-50%,-100%) rotate(${angle}deg) scaleY(1.8)`,
+                opacity:0
+            }
+
+        ],{
+            duration:1200,
+            easing:"ease-out",
+            fill:"forwards"
+        });
+
+        setTimeout(()=>{
+            ray.remove();
+        },1200);
+    }
+
+}
+function createFireworks(){
+
+    const rect = gift.getBoundingClientRect();
+
+    const colors = [
+        "#ff4d6d",
+        "#ffd60a",
+        "#00e5ff",
+        "#ffffff",
+        "#7b2cff",
+        "#00ff88"
+    ];
+
+    for(let i=0;i<180;i++){
+
+        const p=document.createElement("div");
+        p.className="firework";
+
+   const color = colors[Math.floor(Math.random()*colors.length)];
+
+        p.style.background = color;
+        p.style.color = color;
+
+        p.style.left=(rect.left+rect.width/2)+"px";
+        p.style.top=(rect.top+30)+"px";
+
+        document.body.appendChild(p);
+
+        const angle=Math.random()*Math.PI*2;
+        const distance=120+Math.random()*350;
+
+        const x=Math.cos(angle)*distance;
+        const y=Math.sin(angle)*distance;
+
+        p.animate([
+            {
+                transform:"translate(-50%,-50%) scale(.3)",
+                opacity:1
+            },
+            {
+                transform:`translate(${x}px,${y}px) scale(1.4)`,
+                opacity:0
+            }
+        ],{
+            duration:1500,
+            easing:"ease-out",
+            fill:"forwards"
+        });
+
+        setTimeout(()=>{
+            p.remove();
+        },1500);
+
+    }
+
+}
+    </script>
+
+</body>
+</html>
